@@ -12,14 +12,12 @@ function extractCookie() {
     return document.cookie
 }
 
-chrome.runtime.onConnect.addListener(function (port) {
-    port.onMessage.addListener(function (msg) {
+chrome.runtime.onMessage.addListener(
+    function (msg, _, sendResponse) {
         if (msg.action === "BEGIN_EXTRACTION") {
-            port.postMessage({
-                action: 'END_EXTRACTION',
+            sendResponse({
                 cookie: extractCookie(),
                 token: extractToken()
-            })
+            });
         }
     });
-});

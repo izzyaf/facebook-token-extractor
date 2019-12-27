@@ -5,7 +5,6 @@
   "description": "Extract current Facebook user's token (and cookies) with ease",
   "author": "Le Minh Pham Hoang <le.minh.pham.hoang@gmail.com>",
   "homepage_url": "https://github.com/leminhph/facebook-token-extractor",
-  "default_locale": "en",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -27,5 +26,11 @@
       "src/background.js"
     ],
     "persistent": false
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*"],
+      "js": ["src/content_script.js"]
+    }
+  ]
 }
