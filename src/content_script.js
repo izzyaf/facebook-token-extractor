@@ -12,14 +12,14 @@ function extractCookie() {
     return document.cookie
 }
 
-const port = chrome.runtime.connect({name: 'EXTRACTOR'});
-port.onMessage.addListener(function (msg) {
-    console.log('message', msg)
-
-    if (msg.action === "BEGIN_EXTRACTION")
-        port.postMessage({
-            action: 'END_EXTRACTION',
-            cookie: extractCookie(),
-            token: extractToken()
-        })
-})
+chrome.runtime.onConnect.addListener(function (port) {
+    port.onMessage.addListener(function (msg) {
+        if (msg.action === "BEGIN_EXTRACTION") {
+            port.postMessage({
+                action: 'END_EXTRACTION',
+                cookie: extractCookie(),
+                token: extractToken()
+            })
+        }
+    });
+});
