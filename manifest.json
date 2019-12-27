@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Facebook Token Extractor",
+  "version": "0.0.1",
+  "description": "Extract current Facebook user's token (and cookies) with ease",
+  "author": "Le Minh Pham Hoang <le.minh.pham.hoang@gmail.com>",
+  "homepage_url": "https://github.com/leminhph/facebook-token-extractor",
+  "default_locale": "en",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "declarativeContent",
+    "activeTab"
+  ],
+  "page_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ],
+    "persistent": false
+  }
+}
