@@ -4,10 +4,18 @@ document.getElementById('extract').addEventListener('click', function () {
             tabs[0].id,
             {action: "BEGIN_EXTRACTION"},
             function (response) {
-                document.getElementById("result").value = JSON.stringify({
+                const textarea = document.getElementById("result");
+
+                textarea.value = JSON.stringify({
                     token: response.token,
                     cookie: response.cookie
-                }, null, 2)
+                }, null, 2);
+
+                textarea.select();
+                document.execCommand("copy");
+
+                const notifier = document.getElementById('notifier');
+                notifier.textContent = 'Copied to clipboard!'
             });
     });
 });
