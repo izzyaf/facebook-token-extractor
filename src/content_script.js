@@ -8,15 +8,10 @@ function extractToken() {
     return ''
 }
 
-function extractCookie() {
-    return document.cookie
-}
-
 chrome.runtime.onMessage.addListener(
     function (msg, _, sendResponse) {
         if (msg.action === "BEGIN_EXTRACTION") {
             sendResponse({
-                cookie: extractCookie(),
                 token: extractToken()
             });
         }

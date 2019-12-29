@@ -12,7 +12,9 @@
   },
   "permissions": [
     "declarativeContent",
-    "activeTab"
+    "activeTab",
+    "cookies",
+    "https://*.facebook.com/*"
   ],
   "page_action": {
     "default_icon": {
