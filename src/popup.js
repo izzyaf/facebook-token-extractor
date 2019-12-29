@@ -5,6 +5,7 @@ document.getElementById('extract').addEventListener('click', function () {
             {action: "BEGIN_EXTRACTION"},
             function (response) {
                 const payload = {
+                    pageId: response.pageId,
                     token: response.token,
                 };
 
