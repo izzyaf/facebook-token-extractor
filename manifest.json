@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Facebook Token Extractor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extract current Facebook user's token (and cookies) with ease",
   "author": "Le Minh Pham Hoang <le.minh.pham.hoang@gmail.com>",
   "homepage_url": "https://github.com/leminhph/facebook-token-extractor",
